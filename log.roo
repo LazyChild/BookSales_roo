@@ -1,0 +1,17 @@
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-09 04:15:33
+project --topLevelPackage com.ryliu.book
+persistence setup --provider HIBERNATE --database MYSQL --databaseName book --userName root --password topcoder
+web mvc setup
+security setup
+perform eclipse
+entity jpa --class ~.domain.Book
+perform eclipse
+entity jpa --class ~.domain.Book
+entity jpa --class ~.domain.Book
+entity jpa --class ~.domain.Book
+entity jpa --class ~.domain.Book
+field string --fieldName isbn
+entity jpa --class ~.domain.Person
+enum type --class ~.domain.PersonRole
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-05-09 04:31:48
