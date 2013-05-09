@@ -34,4 +34,6 @@ public class Book {
     
     @Min(0)
     private Long amount;
+    
+    private String url;
 }

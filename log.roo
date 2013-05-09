@@ -15,3 +15,15 @@ entity jpa --class ~.domain.Person
 enum type --class ~.domain.PersonRole
 quit
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-05-09 04:31:48
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-09 18:29:15
+web mvc scaffold --class ~.web.PersonController --backingType ~.domain.Person
+perform eclipse
+web mvc finder add --formBackingType ~.domain.Person --class ~.web.PersonController
+// [failed] web mvc view --viewName accessDenied --title "Access Denied" --path '/'
+web mvc view --viewName accessDenied --title "Access Denied" --path "/"
+web mvc view --viewName unaccessable --title "Access Denied" --path "/"
+web mvc view --viewName unaccessable --title "Access Denied" --path "/"
+web mvc view --viewName unaccessable --title "Access Denied" --path "/"
+web mvc view --viewName unaccessable --title "Access Denied" --path "/"
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-09 20:56:31
+web mvc scaffold --class ~.web.BookController --backingType ~.domain.Book

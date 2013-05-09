@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Enumerated;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import org.springframework.roo.addon.javabean.RooJavaBean;
 import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
@@ -21,9 +22,19 @@ public class Person {
 
     @NotNull
     private String password;
+    
+    @NotNull
+    @Column(unique = true)
+    private Long pid;
 
     @NotNull
     private String name;
+    
+    @Enumerated
+    private Sex sex;
+    
+    @Min(1)
+    private Integer age;
 
     @Enumerated
     private PersonRole personRole;

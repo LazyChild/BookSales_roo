@@ -55,4 +55,12 @@ privileged aspect Book_Roo_JavaBean {
         this.amount = amount;
     }
     
+    public String Book.getUrl() {
+        return this.url;
+    }
+    
+    public void Book.setUrl(String url) {
+        this.url = url;
+    }
+    
 }

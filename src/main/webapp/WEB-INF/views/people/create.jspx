@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:create id="fc_com_ryliu_book_domain_Person" modelAttribute="person" path="/people" render="${empty dependencies}" z="fsNYeRc1Hngwf7Y5iiVnjEvstFQ=">
+        <field:input field="login" id="c_com_ryliu_book_domain_Person_login" required="true" z="YnqOWCm/06BE+DVBCl+kxyIedQM="/>
+        <field:input type="password" field="password" id="c_com_ryliu_book_domain_Person_password" required="true" z="user-managed"/>
+        <field:input field="name" id="c_com_ryliu_book_domain_Person_name" required="true" z="tgqtDO4QT8zhoV3XudYCbV7mhzk="/>
+        <field:select field="personRole" id="c_com_ryliu_book_domain_Person_personRole" items="${personroles}" path="personroles" z="w4LBMdgO5B87IReNbu8FfzH5N7M="/>
+        <field:input field="pid" id="c_com_ryliu_book_domain_Person_pid" required="true" validationMessageCode="field_invalid_integer" z="RD2JbpamPCn1IwfmNaLd2ipchoo="/>
+        <field:select field="sex" id="c_com_ryliu_book_domain_Person_sex" items="${sexes}" path="sexes" z="8i6KEn8X84M8MAOiinep781xtk8="/>
+        <field:input field="age" id="c_com_ryliu_book_domain_Person_age" min="1" required="true" validationMessageCode="field_invalid_integer" z="ytGuN/szF/YXhRFL+78rSjG0HtY="/>
+    </form:create>
+    <form:dependency dependencies="${dependencies}" id="d_com_ryliu_book_domain_Person" render="${not empty dependencies}" z="wE/QHaWDymdzzQBfpCr+a/SZZIc="/>
+</div>

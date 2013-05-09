@@ -5,6 +5,7 @@ package com.ryliu.book.domain;
 
 import com.ryliu.book.domain.Person;
 import com.ryliu.book.domain.PersonRole;
+import com.ryliu.book.domain.Sex;
 
 privileged aspect Person_Roo_JavaBean {
     
@@ -24,12 +25,36 @@ privileged aspect Person_Roo_JavaBean {
         this.password = password;
     }
     
+    public Long Person.getPid() {
+        return this.pid;
+    }
+    
+    public void Person.setPid(Long pid) {
+        this.pid = pid;
+    }
+    
     public String Person.getName() {
         return this.name;
     }
     
     public void Person.setName(String name) {
         this.name = name;
+    }
+    
+    public Sex Person.getSex() {
+        return this.sex;
+    }
+    
+    public void Person.setSex(Sex sex) {
+        this.sex = sex;
+    }
+    
+    public Integer Person.getAge() {
+        return this.age;
+    }
+    
+    public void Person.setAge(Integer age) {
+        this.age = age;
     }
     
     public PersonRole Person.getPersonRole() {

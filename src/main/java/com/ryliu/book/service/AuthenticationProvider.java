@@ -49,12 +49,16 @@ public class AuthenticationProvider extends
 			}
 			PersonRole role = person.getPersonRole();
 			switch (role) {
-			case SUPER_USER:
-				authorities.add(new SimpleGrantedAuthority("ROLE_SUPER_USER"));
+			case SUPER_ADMIN:
+				authorities.add(new SimpleGrantedAuthority("ROLE_SUPER_ADMIN"));
 				break;
 			case ADMIN:
 				authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
 				break;
+			case CLIENT:
+				authorities.add(new SimpleGrantedAuthority("ROLE_CLIENT"));
+				break;
+			default: 
 			}
 		} catch (EntityNotFoundException e) {
 			throw new BadCredentialsException("Invalid username!");

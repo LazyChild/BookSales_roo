@@ -8,7 +8,7 @@
     
     <!-- Turns on support for mapping requests to Spring MVC @Controller methods
          Also registers default Formatters and Validators for use across all @Controllers -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven conversion-service="applicationConversionService"/>
     
 
     <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources -->
@@ -30,6 +30,7 @@
     <mvc:view-controller path="/uncaughtException"/>
     <mvc:view-controller path="/resourceNotFound"/>
     <mvc:view-controller path="/dataAccessFailure"/>
+    <mvc:view-controller path="/dataAccessDeny"/>
 
     <!-- Resolves localized messages*.properties and application.properties files in the application to allow for internationalization. 
     The messages*.properties files translate Roo generated messages which are part of the admin interface, the 
@@ -73,4 +74,5 @@
       </list>
     </property>
   </bean>
+<bean class="com.ryliu.book.web.ApplicationConversionServiceFactoryBean" id="applicationConversionService"/>
 </beans>
