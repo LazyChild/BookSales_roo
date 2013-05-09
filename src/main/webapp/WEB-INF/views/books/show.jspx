@@ -2,14 +2,14 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_com_ryliu_book_domain_Book" object="${book}" path="/books" z="Ur6d9KiveNNP/XJifLm/UaEj3gs=">
-    	<div style="float: left;">
-        <field:display field="isbn" id="s_com_ryliu_book_domain_Book_isbn" object="${book}" z="XGmSXgJVUw/EIIy8ubT4IPwFLG8="/>
-        <field:display field="title" id="s_com_ryliu_book_domain_Book_title" object="${book}" z="ZhrZfV9UGMmvgmFJn0WfdRpS3HA="/>
-        <field:display field="author" id="s_com_ryliu_book_domain_Book_author" object="${book}" z="5a44G+eXN9PBATyWaFlXWYH8mq4="/>
-        <field:display field="publisher" id="s_com_ryliu_book_domain_Book_publisher" object="${book}" z="ooQAeqeCm6hf9FgSe5J/n9jVqE8="/>
-        <field:display field="price" id="s_com_ryliu_book_domain_Book_price" object="${book}" z="KAXEAwEN8+n1iV/ddsKT3q/lB+U="/>
-        <field:display field="amount" id="s_com_ryliu_book_domain_Book_amount" object="${book}" z="/Mx38JVThrk4sqmCtGYMInG0sDs="/>
+    <page:show id="ps_com_ryliu_book_domain_Book" object="${book}" path="/books" z="user-managed">
+        <div style="float: left;">
+            <field:display field="isbn" id="s_com_ryliu_book_domain_Book_isbn" object="${book}" z="XGmSXgJVUw/EIIy8ubT4IPwFLG8="/>
+            <field:display field="title" id="s_com_ryliu_book_domain_Book_title" object="${book}" z="ZhrZfV9UGMmvgmFJn0WfdRpS3HA="/>
+            <field:display field="author" id="s_com_ryliu_book_domain_Book_author" object="${book}" z="5a44G+eXN9PBATyWaFlXWYH8mq4="/>
+            <field:display field="publisher" id="s_com_ryliu_book_domain_Book_publisher" object="${book}" z="ooQAeqeCm6hf9FgSe5J/n9jVqE8="/>
+            <field:display field="price" id="s_com_ryliu_book_domain_Book_price" object="${book}" z="KAXEAwEN8+n1iV/ddsKT3q/lB+U="/>
+            <field:display field="amount" id="s_com_ryliu_book_domain_Book_amount" object="${book}" z="/Mx38JVThrk4sqmCtGYMInG0sDs="/>
         </div>
         <img src="${book.url}" style="float: right; margin-right: 5%; margin-top: 3%;"/>
     </page:show>

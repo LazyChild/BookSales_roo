@@ -27,3 +27,19 @@ web mvc view --viewName unaccessable --title "Access Denied" --path "/"
 web mvc view --viewName unaccessable --title "Access Denied" --path "/"
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-09 20:56:31
 web mvc scaffold --class ~.web.BookController --backingType ~.domain.Book
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-09 22:23:23
+finder list --class ~.domain.Book
+finder list --class ~.domain.Book --filter title
+finder add --finderName findBooksByTitleLike
+web mvc finder add --formBackingType ~.domain.Book --class ~.web.BookController
+finder add --finderName findBooksByTitleEquals
+finder add --finderName findBooksByTitleEquals --class ~.domain.Book
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 00:39:30
+// [failed] entity jpa --class ~.domain.Order 
+entity jpa --class ~.domain.BookOrder 
+// [failed] entity jpa --class ~.domain.Transaction
+entity jpa --class ~.domain.BookTransaction
+enum type --class ~.domain.TransactionType
+// [failed] field embedded --fieldName book --type ~.domain.Book --class ~.domain.BookOrder
+field reference --fieldName book --type ~.domain.Book --class ~.domain.BookOrder
+enum type --class ~.domain.OrderStatus
