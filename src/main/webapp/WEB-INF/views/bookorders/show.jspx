@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show delete="false" id="ps_com_ryliu_book_domain_BookOrder" object="${bookorder}" path="/bookorders" update="false" z="s2FxFyiUzBVWa43e2ZrOI4IJMG4=">
+        <field:display field="book" id="s_com_ryliu_book_domain_BookOrder_book" object="${bookorder}" z="t3IVAT8xHOEuP3NxBmnRLGg1IdY="/>
+        <field:display field="figure" id="s_com_ryliu_book_domain_BookOrder_figure" object="${bookorder}" z="/RYzGgI/zehxJrrnNDPj87Age7o="/>
+        <field:display field="amount" id="s_com_ryliu_book_domain_BookOrder_amount" object="${bookorder}" z="ZUkIVe2vK2ei9AQlGJEwVoFEkIw="/>
+        <field:display field="status" id="s_com_ryliu_book_domain_BookOrder_status" object="${bookorder}" z="3Yp5vlnTAN++tlrEVlbptqhefmU="/>
+    </page:show>
+</div>

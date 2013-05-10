@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_ryliu_book_domain_BookOrder" items="${bookorders}" z="qfyqrR2xU+G/uPJSMds7pTyrIgc=">
+        <table:table data="${bookorders}" delete="false" id="l_com_ryliu_book_domain_BookOrder" path="/bookorders" update="false" z="QVAviEW8XW7lh0IHGos1HW056ek=">
+            <table:column id="c_com_ryliu_book_domain_BookOrder_book" property="book" z="ggdtapxHzAoyE1a5v41jX8mGscI="/>
+            <table:column id="c_com_ryliu_book_domain_BookOrder_figure" property="figure" z="Dhzi4CUqCK0/bfj74HW3mA5Nla0="/>
+            <table:column id="c_com_ryliu_book_domain_BookOrder_amount" property="amount" z="7b7zy0Qq9GCt0UunNx9sFOGUaQI="/>
+            <table:column id="c_com_ryliu_book_domain_BookOrder_status" property="status" z="HyQnsC6CEWnMnKhFhnZ1Cd2NP2g="/>
+        </table:table>
+    </page:list>
+</div>

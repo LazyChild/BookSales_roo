@@ -74,16 +74,6 @@ privileged aspect BookController_Roo_Controller {
         return "books/update";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
-    public String BookController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Book book = Book.findBook(id);
-        book.remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/books";
-    }
-    
     void BookController.populateEditForm(Model uiModel, Book book) {
         uiModel.addAttribute("book", book);
     }

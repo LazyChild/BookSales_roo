@@ -4,6 +4,7 @@
 package com.ryliu.book.web;
 
 import com.ryliu.book.domain.Book;
+import com.ryliu.book.domain.BookOrder;
 import com.ryliu.book.domain.Person;
 import com.ryliu.book.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -38,6 +39,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<BookOrder, String> ApplicationConversionServiceFactoryBean.getBookOrderToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.ryliu.book.domain.BookOrder, java.lang.String>() {
+            public String convert(BookOrder bookOrder) {
+                return new StringBuilder().append(bookOrder.getFigure()).append(' ').append(bookOrder.getAmount()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, BookOrder> ApplicationConversionServiceFactoryBean.getIdToBookOrderConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.ryliu.book.domain.BookOrder>() {
+            public com.ryliu.book.domain.BookOrder convert(java.lang.Long id) {
+                return BookOrder.findBookOrder(id);
+            }
+        };
+    }
+    
+    public Converter<String, BookOrder> ApplicationConversionServiceFactoryBean.getStringToBookOrderConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.ryliu.book.domain.BookOrder>() {
+            public com.ryliu.book.domain.BookOrder convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), BookOrder.class);
+            }
+        };
+    }
+    
     public Converter<Person, String> ApplicationConversionServiceFactoryBean.getPersonToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.ryliu.book.domain.Person, java.lang.String>() {
             public String convert(Person person) {
@@ -66,6 +91,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getBookToStringConverter());
         registry.addConverter(getIdToBookConverter());
         registry.addConverter(getStringToBookConverter());
+        registry.addConverter(getBookOrderToStringConverter());
+        registry.addConverter(getIdToBookOrderConverter());
+        registry.addConverter(getStringToBookOrderConverter());
         registry.addConverter(getPersonToStringConverter());
         registry.addConverter(getIdToPersonConverter());
         registry.addConverter(getStringToPersonConverter());

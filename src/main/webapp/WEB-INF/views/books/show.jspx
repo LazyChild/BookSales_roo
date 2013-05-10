@@ -10,7 +10,11 @@
             <field:display field="publisher" id="s_com_ryliu_book_domain_Book_publisher" object="${book}" z="ooQAeqeCm6hf9FgSe5J/n9jVqE8="/>
             <field:display field="price" id="s_com_ryliu_book_domain_Book_price" object="${book}" z="KAXEAwEN8+n1iV/ddsKT3q/lB+U="/>
             <field:display field="amount" id="s_com_ryliu_book_domain_Book_amount" object="${book}" z="/Mx38JVThrk4sqmCtGYMInG0sDs="/>
+        <field:display field="url" id="s_com_ryliu_book_domain_Book_url" render="false" object="${book}" z="user-managed"/>
         </div>
-        <img src="${book.url}" style="float: right; margin-right: 5%; margin-top: 3%;"/>
+    <div style="float: right; margin-right: 30px;">
+        <p><img src="${book.url}" /></p>
+        <button>Buy It Now</button>
+    </div>
     </page:show>
 </div>

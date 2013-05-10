@@ -43,3 +43,11 @@ enum type --class ~.domain.TransactionType
 // [failed] field embedded --fieldName book --type ~.domain.Book --class ~.domain.BookOrder
 field reference --fieldName book --type ~.domain.Book --class ~.domain.BookOrder
 enum type --class ~.domain.OrderStatus
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 01:20:05
+web mvc scaffold --class ~.web.BookOrderController --backingType ~.domain.BookOrder
+web mvc scaffold --class ~.web.BookTransactionController --backingType ~.domain.BookTransaction
+web mvc scaffold --class ~.web.BookTransactionController --backingType ~.domain.BookTransaction
+// [failed] field date --fieldName date --class ~.domain.BookTransaction --type java.util.Date
+field date --fieldName transactionDate --class ~.domain.BookTransaction --type java.util.Date
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 18:50:45
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 18:51:18

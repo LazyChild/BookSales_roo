@@ -13,5 +13,9 @@
             <menu:item id="i_book_list" messageCode="global_menu_list" url="/books?page=1&amp;size=${empty param.size ? 10 : param.size}" z="VM0+BikyiEq8a8S+W6bSp3FXQFo="/>
             <menu:item id="fi_book_titlelike" messageCode="global_menu_find" url="/books?find=ByTitleLike&amp;form" z="A9/aV8+FfBZCzjdBw9brxHaCSgs="/>
         </menu:category>
+        <menu:category id="c_bookorder" z="l7V7fPJiEtLnOb3i88hiljx3ssY=">
+            <menu:item id="i_bookorder_list" messageCode="global_menu_list" url="/bookorders?page=1&amp;size=${empty param.size ? 10 : param.size}" z="MAy5v+dZ8QeYP1B68DOOZkxjQO0="/>
+            <menu:item id="i_bookorder_new" messageCode="global_menu_new" url="/bookorders?form" z="vgYVBalO1VwQE5nxSSxSVQ5Sy5o="/>
+        </menu:category>
     </menu:menu>
 </div>
