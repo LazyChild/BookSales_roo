@@ -5,6 +5,7 @@ package com.ryliu.book.web;
 
 import com.ryliu.book.domain.Book;
 import com.ryliu.book.domain.BookOrder;
+import com.ryliu.book.domain.BookTransaction;
 import com.ryliu.book.domain.Person;
 import com.ryliu.book.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -63,6 +64,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<BookTransaction, String> ApplicationConversionServiceFactoryBean.getBookTransactionToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<com.ryliu.book.domain.BookTransaction, java.lang.String>() {
+            public String convert(BookTransaction bookTransaction) {
+                return new StringBuilder().append(bookTransaction.getFigure()).append(' ').append(bookTransaction.getAmount()).append(' ').append(bookTransaction.getTransactionDate()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, BookTransaction> ApplicationConversionServiceFactoryBean.getIdToBookTransactionConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, com.ryliu.book.domain.BookTransaction>() {
+            public com.ryliu.book.domain.BookTransaction convert(java.lang.Long id) {
+                return BookTransaction.findBookTransaction(id);
+            }
+        };
+    }
+    
+    public Converter<String, BookTransaction> ApplicationConversionServiceFactoryBean.getStringToBookTransactionConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, com.ryliu.book.domain.BookTransaction>() {
+            public com.ryliu.book.domain.BookTransaction convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), BookTransaction.class);
+            }
+        };
+    }
+    
     public Converter<Person, String> ApplicationConversionServiceFactoryBean.getPersonToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.ryliu.book.domain.Person, java.lang.String>() {
             public String convert(Person person) {
@@ -94,6 +119,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getBookOrderToStringConverter());
         registry.addConverter(getIdToBookOrderConverter());
         registry.addConverter(getStringToBookOrderConverter());
+        registry.addConverter(getBookTransactionToStringConverter());
+        registry.addConverter(getIdToBookTransactionConverter());
+        registry.addConverter(getStringToBookTransactionConverter());
         registry.addConverter(getPersonToStringConverter());
         registry.addConverter(getIdToPersonConverter());
         registry.addConverter(getStringToPersonConverter());

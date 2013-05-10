@@ -3,6 +3,7 @@
 
 package com.ryliu.book.domain;
 
+import com.ryliu.book.domain.Book;
 import com.ryliu.book.domain.BookTransaction;
 import com.ryliu.book.domain.TransactionType;
 import java.util.Date;
@@ -17,12 +18,28 @@ privileged aspect BookTransaction_Roo_JavaBean {
         this.transactionType = transactionType;
     }
     
+    public Book BookTransaction.getBook() {
+        return this.book;
+    }
+    
+    public void BookTransaction.setBook(Book book) {
+        this.book = book;
+    }
+    
     public Double BookTransaction.getFigure() {
         return this.figure;
     }
     
     public void BookTransaction.setFigure(Double figure) {
         this.figure = figure;
+    }
+    
+    public Long BookTransaction.getAmount() {
+        return this.amount;
+    }
+    
+    public void BookTransaction.setAmount(Long amount) {
+        this.amount = amount;
     }
     
     public Date BookTransaction.getTransactionDate() {

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_com_ryliu_book_domain_BookTransaction" modelAttribute="bookTransaction" path="/booktransactions" versionField="Version" z="8NcLbK58M1iQVzZ8X1mnftXSY9g=">
+        <field:select field="transactionType" id="c_com_ryliu_book_domain_BookTransaction_transactionType" items="${transactiontypes}" path="transactiontypes" z="apfb0gHOsLaVswLZEcCrZUQDr1E="/>
+        <field:input decimalMin="0" field="figure" id="c_com_ryliu_book_domain_BookTransaction_figure" required="true" validationMessageCode="field_invalid_number" z="0ruPAEMWJ4+R5AwgeLN8rlQsz78="/>
+        <field:datetime dateTimePattern="${bookTransaction_transactiondate_date_format}" field="transactionDate" id="c_com_ryliu_book_domain_BookTransaction_transactionDate" z="DD2ABLs5GHBAVi7Jv89HOG08HzA="/>
+    </form:update>
+</div>

@@ -17,5 +17,8 @@
             <menu:item id="i_bookorder_list" messageCode="global_menu_list" url="/bookorders?page=1&amp;size=${empty param.size ? 10 : param.size}" z="MAy5v+dZ8QeYP1B68DOOZkxjQO0="/>
             <menu:item id="i_bookorder_new" messageCode="global_menu_new" url="/bookorders?form" z="vgYVBalO1VwQE5nxSSxSVQ5Sy5o="/>
         </menu:category>
+        <menu:category id="c_booktransaction" z="O2oBvuYmT1IUNQql0zYimei6vFU=">
+            <menu:item id="i_booktransaction_list" messageCode="global_menu_list" url="/booktransactions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="w9+kdCSNf+LxLsv+GXgdcc1nZvM="/>
+        </menu:category>
     </menu:menu>
 </div>

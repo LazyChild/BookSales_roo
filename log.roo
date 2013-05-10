@@ -51,3 +51,8 @@ web mvc scaffold --class ~.web.BookTransactionController --backingType ~.domain.
 field date --fieldName transactionDate --class ~.domain.BookTransaction --type java.util.Date
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 18:50:45
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 18:51:18
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 19:03:18
+web mvc scaffold --class ~.web.BookTransactionController --backingType ~.domain.BookTransaction
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 19:31:37
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 21:16:03
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 21:20:16
