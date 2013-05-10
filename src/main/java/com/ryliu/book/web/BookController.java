@@ -29,7 +29,6 @@ public class BookController {
     	if (book.getAmount() < 0) {
     		throw new IllegalArgumentException("This book is already sold out!");
     	}
-    	LOGGER.debug("Entering Buying");
     	BookTransaction transaction = new BookTransaction();
     	transaction.setTransactionDate(new Date());
     	transaction.setTransactionType(TransactionType.SELL);

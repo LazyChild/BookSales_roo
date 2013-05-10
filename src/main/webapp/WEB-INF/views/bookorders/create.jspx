@@ -6,7 +6,7 @@
         <field:select field="book" id="c_com_ryliu_book_domain_BookOrder_book" itemValue="id" items="${books}" path="/books" z="5I3ex/bCPCokiypHQ3r2fbtCddM="/>
         <field:input decimalMin="0" field="figure" id="c_com_ryliu_book_domain_BookOrder_figure" required="true" validationMessageCode="field_invalid_number" z="NSwMbdh9trF1ZcWoEfL2IPhCa5M="/>
         <field:input field="amount" id="c_com_ryliu_book_domain_BookOrder_amount" min="0" required="true" validationMessageCode="field_invalid_integer" z="JwCabdC3/WPnSgMtfeSK0WOaHwU="/>
-        <field:select field="status" id="c_com_ryliu_book_domain_BookOrder_status" items="${orderstatuses}" path="orderstatuses" z="3GR4bVb5+73RC6/0p7l2Rt4dv94="/>
+        <field:select render="false" field="status" id="c_com_ryliu_book_domain_BookOrder_status" items="${orderstatuses}" path="orderstatuses" z="3GR4bVb5+73RC6/0p7l2Rt4dv94="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_com_ryliu_book_domain_BookOrder" render="${not empty dependencies}" z="K/RnaxA2XMjfzCnScGEyrNnI2E4="/>
 </div>

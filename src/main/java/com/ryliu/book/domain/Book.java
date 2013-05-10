@@ -32,7 +32,7 @@ public class Book {
     private Double price;
 
     @Min(0)
-    private Long amount;
+    private Long amount = 0L;
 
     private String url;
 }

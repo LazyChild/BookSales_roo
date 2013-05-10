@@ -8,7 +8,8 @@
         <field:input field="author" id="c_com_ryliu_book_domain_Book_author" required="true" z="E8U0Hc93S27RDNvUNlZyGbUgjiI="/>
         <field:input field="publisher" id="c_com_ryliu_book_domain_Book_publisher" required="true" z="CnYecxSXDiJyfeNbS3ow647V9qo="/>
         <field:input decimalMin="0" field="price" id="c_com_ryliu_book_domain_Book_price" required="true" validationMessageCode="field_invalid_number" z="W2PaQFnta6OJLztCJxIeOfaW4NA="/>
-        <field:input field="amount" id="c_com_ryliu_book_domain_Book_amount" min="0" required="true" validationMessageCode="field_invalid_integer" z="fWdvMwEE4ngbOa/uz2hHx9AFOsg="/>
+        <field:input field="amount" id="c_com_ryliu_book_domain_Book_amount" min="0" render="false" required="true" validationMessageCode="field_invalid_integer" z="user-managed"/>
         <field:input field="url" id="c_com_ryliu_book_domain_Book_url" z="mqxb7trlJd3RY2m7Ss1qH8r7Lgg="/>
+        <input type="hidden" name="amount" value="${book.amount}"/>
     </form:update>
 </div>

@@ -24,5 +24,5 @@ public class BookOrder {
     private Long amount;
     
     @Enumerated
-    private OrderStatus status;
+    private OrderStatus status = OrderStatus.UNPAID;
 }

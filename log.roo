@@ -56,3 +56,5 @@ web mvc scaffold --class ~.web.BookTransactionController --backingType ~.domain.
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 19:31:37
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 21:16:03
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 21:20:16
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 22:13:00
+field number --fieldName orz --type java.lang.Double --class ~.domain.Book --value 100
