@@ -4,11 +4,96 @@
   <spring:message var="app_name" code="application_name" htmlEscape="false" />
   <spring:message var="title" code="welcome_titlepane" arguments="${app_name}" htmlEscape="false" />
   <util:panel id="title" title="${title}">
-    <h3>
+    <h2>
       <spring:message code="welcome_h3" arguments="${app_name}" />
-    </h3>
+    </h2>
     <p>
       <spring:message code="welcome_text" />
     </p>
+    <h3>
+    	Book Quick Access
+    </h3>
+    <style type="text/css">
+    	#book_quick_access {
+    		width: 400px;
+    	}
+    	#result_div {
+    		display: none;
+    		width: 400px;
+    		position: absolute;
+    		border: 1px solid #B3B3B3;
+    		
+    	}
+    	#result_div table {
+    		width: 100%;
+    		border-width: 0px;
+    		cursor: default;
+    	}
+    	#result_div td {
+    		color: #000;
+    		padding: 0 8px;
+    		height: 25px;
+    		line-height: 25px;
+    		border-width: 0px;
+    	}
+    	#result_div tr {
+    		background-color: #FFF;
+    	}
+    	#result_div tr:hover {
+    		background-color: #EFEFEF;
+    	}
+    	#result_div a {
+    		text-decoration: none;
+    		cursor: default;
+    		display: block;
+    		height: 100%;
+    		width: 100%;
+    	}
+    </style>
+    <input id="book_quick_access" placeholder="Search books here..." type="text"/>
+    <div id="result_div">
+    	<table><tbody id="result_tbody">
+    	<tr><td><a href="orz">Orz</a></td></tr>
+    	<tr><td>收拾久河山</td></tr>
+    	<tr><td>朝天却</td></tr>
+    	</tbody></table>
+    </div>
+    <script type="text/javascript">
+    	var timer = null;
+    	dojo.ready(function() {
+    		var input = dojo.byId('book_quick_access');
+    		dojo.connect(input, "onclick", function() {
+    			if (timer) clearTimeout(timer);
+    			var search = this.value;
+    			if (search == "") {
+    				unshow();
+    			} else {
+    				timer = setTimeout(search, 300);
+    			}
+    		});
+    		dojo.connect(input, "onblur", unshow);
+    	});
+    	var search = function() {
+    		dojo.xhrGet({
+    			url: "${json_url}",
+    			handleAs: "json",
+    			load: function(data) {
+    				dojo.forEach(data, function(json) {
+    					conlose.log(json.title);
+    				});
+    				show();
+    			},
+    			error: function(e) {
+    				console.log("Ajax call failed", e);
+    			}
+    		});
+    	}
+    	var unshow = function() {
+    		dojo.style(dojo.byId('result_div'), "display", "none");
+    	}
+    	var show = function() {
+    		dojo.style(dojo.byId('result_div'), "display", "block");
+    	}
+    </script>
   </util:panel>
 </div>
