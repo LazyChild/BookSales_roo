@@ -3,8 +3,7 @@ package com.ryliu.book.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.EntityNotFoundException;
-
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
@@ -28,7 +27,6 @@ public class AuthenticationProvider extends
 	protected void additionalAuthenticationChecks(UserDetails userDetails,
 			UsernamePasswordAuthenticationToken authentication)
 			throws AuthenticationException {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -60,8 +58,8 @@ public class AuthenticationProvider extends
 				break;
 			default: 
 			}
-		} catch (EntityNotFoundException e) {
-			throw new BadCredentialsException("Invalid username!");
+		} catch (EmptyResultDataAccessException e) {
+			throw new BadCredentialsException("User does not exist.");
 		}
 		return new User(username, password, authorities);
 	}
