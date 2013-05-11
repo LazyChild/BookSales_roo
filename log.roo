@@ -74,3 +74,10 @@ help
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-11 18:17:55
 finder add --finderName findBooksByTitleOrAuthorLike --class ~.domain.Book
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-11 18:31:34
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-12 01:30:08
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-05-12 01:30:16
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-12 01:32:42
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-12 01:38:03
+quit
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log closed at 2013-05-12 01:38:13

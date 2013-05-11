@@ -78,15 +78,43 @@ public class Book {
 	public String getIsbn() {
         return this.isbn;
     }
+
+	public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+	public String getTitle() {
+        return this.title;
+    }
+
+	public void setTitle(String title) {
+        this.title = title;
+    }
+
+	public String getAuthor() {
+        return this.author;
+    }
+
+	public void setAuthor(String author) {
+        this.author = author;
+    }
 	
 	@JSON(include = false)
 	public String getPublisher() {
         return this.publisher;
     }
+	
+	public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
 
 	@JSON(include = false)
 	public Double getPrice() {
         return this.price;
+    }
+	
+	public void setPrice(Double price) {
+        this.price = price;
     }
 
 	@JSON(include = false)
@@ -94,10 +122,19 @@ public class Book {
         return this.amount;
     }
 
+	public void setAmount(Long amount) {
+        this.amount = amount;
+    }
+
 	@JSON(include = false)
 	public String getUrl() {
         return this.url;
     }
+	
+	public void setUrl(String url) {
+        this.url = url;
+    }
+
 
 	public static TypedQuery<Book> findBooksByAuthorLike(String author) {
         if (author == null || author.length() == 0) throw new IllegalArgumentException("The author argument is required");
@@ -238,42 +275,6 @@ public class Book {
 
 	public void setVersion(Integer version) {
         this.version = version;
-    }
-
-	public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-	public String getTitle() {
-        return this.title;
-    }
-
-	public void setTitle(String title) {
-        this.title = title;
-    }
-
-	public String getAuthor() {
-        return this.author;
-    }
-
-	public void setAuthor(String author) {
-        this.author = author;
-    }
-
-	public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-	public void setPrice(Double price) {
-        this.price = price;
-    }
-
-	public void setAmount(Long amount) {
-        this.amount = amount;
-    }
-
-	public void setUrl(String url) {
-        this.url = url;
     }
 
 	public String toJson() {

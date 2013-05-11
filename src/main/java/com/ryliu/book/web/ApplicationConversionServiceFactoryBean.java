@@ -17,6 +17,7 @@ import org.springframework.roo.addon.web.mvc.controller.converter.RooConversionS
 @RooConversionService
 public class ApplicationConversionServiceFactoryBean extends FormattingConversionServiceFactoryBean {
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void installFormatters(FormatterRegistry registry) {
 		super.installFormatters(registry);
@@ -26,7 +27,7 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
 	public Converter<Book, String> getBookToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<com.ryliu.book.domain.Book, java.lang.String>() {
             public String convert(Book book) {
-                return new StringBuilder().append(book.getIsbn()).append(' ').append(book.getPublisher()).append(' ').append(book.getPrice()).append(' ').append(book.getAmount()).toString();
+                return new StringBuilder().append(book.getIsbn()).append(' ').append(book.getTitle()).append(' ').append(book.getAuthor()).toString();
             }
         };
     }
