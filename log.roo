@@ -68,3 +68,9 @@ finder add --class ~.domain.Book --finderName findBooksByPublisherLike
 finder add --class ~.domain.BookTransaction --finderName findBookTransactionsByTransactionDateBetween
 web mvc finder add --formBackingType ~.domain.BookTransaction --class ~.web.BookTransactionController
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-11 15:30:25
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-11 18:08:06
+help
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-11 18:15:30
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-11 18:17:55
+finder add --finderName findBooksByTitleOrAuthorLike --class ~.domain.Book
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-11 18:31:34

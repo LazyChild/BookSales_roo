@@ -7,10 +7,6 @@ import com.ryliu.book.domain.Book;
 
 privileged aspect Book_Roo_JavaBean {
     
-    public String Book.getIsbn() {
-        return this.isbn;
-    }
-    
     public void Book.setIsbn(String isbn) {
         this.isbn = isbn;
     }
@@ -31,32 +27,16 @@ privileged aspect Book_Roo_JavaBean {
         this.author = author;
     }
     
-    public String Book.getPublisher() {
-        return this.publisher;
-    }
-    
     public void Book.setPublisher(String publisher) {
         this.publisher = publisher;
-    }
-    
-    public Double Book.getPrice() {
-        return this.price;
     }
     
     public void Book.setPrice(Double price) {
         this.price = price;
     }
     
-    public Long Book.getAmount() {
-        return this.amount;
-    }
-    
     public void Book.setAmount(Long amount) {
         this.amount = amount;
-    }
-    
-    public String Book.getUrl() {
-        return this.url;
     }
     
     public void Book.setUrl(String url) {

@@ -6,10 +6,10 @@
         <table:table data="${books}" delete="false" id="l_com_ryliu_book_domain_Book" path="/books" z="9yln367QxMNgBU4kAxE5JEbiWlk=">
             <table:column id="c_com_ryliu_book_domain_Book_isbn" property="isbn" z="D3a+G70NjamOITiHWpQDWwBZ75w="/>
             <table:column id="c_com_ryliu_book_domain_Book_title" property="title" z="fl8CZ6RQoL5hVx8bSqF435m/BNI="/>
-            <table:column id="c_com_ryliu_book_domain_Book_author" property="author" z="SGonnerKraBF9YzAHl7JIhv7BJo="/>
             <table:column id="c_com_ryliu_book_domain_Book_publisher" property="publisher" z="Y4CK9iBkfO3W/c5yMIBs8wV7rbk="/>
             <table:column id="c_com_ryliu_book_domain_Book_price" property="price" z="HqfDJvBWKk2WGn8HC4rFmTHEY0A="/>
-            <table:column id="c_com_ryliu_book_domain_Book_amount" render="false" property="amount" z="user-managed"/>
+            <table:column id="c_com_ryliu_book_domain_Book_amount" property="amount" render="false" z="user-managed"/>
+            <table:column id="c_com_ryliu_book_domain_Book_url" property="url" z="W5+WcPhphE41xD5WgtKq6juwyKA="/>
         </table:table>
     </page:list>
 </div>

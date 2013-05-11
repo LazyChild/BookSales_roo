@@ -30,7 +30,6 @@
     		cursor: default;
     	}
     	#result_div td {
-    		color: #000;
     		padding: 0 8px;
     		height: 25px;
     		line-height: 25px;
@@ -49,37 +48,49 @@
     		height: 100%;
     		width: 100%;
     	}
+    	#result_div a:visited {
+    		color: #303030;
+    	}
     </style>
     <input id="book_quick_access" placeholder="Search books here..." type="text"/>
     <div id="result_div">
     	<table><tbody id="result_tbody">
-    	<tr><td><a href="orz">Orz</a></td></tr>
-    	<tr><td>收拾久河山</td></tr>
-    	<tr><td>朝天却</td></tr>
     	</tbody></table>
     </div>
+    <p>This is the live search box implemented by AJAX. It can match both book title and author.</p>
+    <spring:url value="/books?find=ByTitleOrAuthorLike" var="json_url" />
+    <spring:url value="/books/" var="book_url" />
     <script type="text/javascript">
     	var timer = null;
     	dojo.ready(function() {
     		var input = dojo.byId('book_quick_access');
-    		dojo.connect(input, "onclick", function() {
+    		dojo.connect(input, "onkeyup", function() {
     			if (timer) clearTimeout(timer);
-    			var search = this.value;
-    			if (search == "") {
+    			var keyword = this.value;
+    			if (keyword == "") {
     				unshow();
     			} else {
     				timer = setTimeout(search, 300);
     			}
     		});
-    		dojo.connect(input, "onblur", unshow);
+    		dojo.connect(input, "onblur", function() {
+    			setTime(unshow, 300);
+    		});
     	});
     	var search = function() {
     		dojo.xhrGet({
     			url: "${json_url}",
+    			content: {keyword: dojo.byId('book_quick_access').value}, 
     			handleAs: "json",
     			load: function(data) {
-    				dojo.forEach(data, function(json) {
-    					conlose.log(json.title);
+					var tbody = dojo.byId('result_tbody');
+					tbody.innerHTML = "";
+    				dojo.forEach(data, function(item) {
+    					var content = '&lt;tr&gt;&lt;td&gt;';
+    					content += '&lt;a href=&quot;${book_url}' + item.id + '&quot;&gt;'
+    						+ item.title + ' - ' + item.author + '&lt;/a&gt;';
+    					content += '&lt;/tr&gt;&lt;/td&gt;';
+    					tbody.innerHTML += content;
     				});
     				show();
     			},

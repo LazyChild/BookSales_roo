@@ -25,4 +25,7 @@
 <definition extends="default" name="books/findBooksByPublisherLike">
         <put-attribute name="body" value="/WEB-INF/views/books/findBooksByPublisherLike.jspx"/>
     </definition>
+<definition extends="default" name="books/findBooksByTitleOrAuthorLike">
+        <put-attribute name="body" value="/WEB-INF/views/books/findBooksByTitleOrAuthorLike.jspx"/>
+    </definition>
 </tiles-definitions>

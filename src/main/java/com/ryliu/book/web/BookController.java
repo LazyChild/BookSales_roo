@@ -1,12 +1,16 @@
 package com.ryliu.book.web;
 
 import java.util.Date;
+import java.util.List;
 
 import com.ryliu.book.domain.Book;
 import com.ryliu.book.domain.BookTransaction;
 import com.ryliu.book.domain.TransactionType;
 
 import org.apache.log4j.Logger;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.roo.addon.web.mvc.controller.finder.RooWebFinder;
 import org.springframework.roo.addon.web.mvc.controller.scaffold.RooWebScaffold;
 import org.springframework.stereotype.Controller;
@@ -14,6 +18,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @RequestMapping("/books")
 @Controller
@@ -47,4 +54,16 @@ public class BookController {
 	public void handleException(Exception e) {
 		LOGGER.error("Error: ", e);
 	}
+
+
+    @RequestMapping(params = "find=ByTitleOrAuthorLike", method = RequestMethod.GET,
+    		headers = "Accept=application/json")
+    @ResponseBody
+    public ResponseEntity<String> findBooksByTitleOrAuthorLike(@RequestParam("keyword") String keyword, Model uiModel) {
+    	HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/json; charset=utf-8");
+    	List<Book> books = Book.findBooksByTitleOrAuthorLike(keyword).getResultList();
+    	List<Book> result = books.subList(0, Math.min(books.size(), 10));
+        return new ResponseEntity<String>(Book.toJsonArray(result), headers, HttpStatus.OK);
+    }
 }

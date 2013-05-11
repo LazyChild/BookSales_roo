@@ -3,6 +3,7 @@
 
 package com.ryliu.book.web;
 
+import com.ryliu.book.domain.BookTransaction;
 import com.ryliu.book.web.BookTransactionController;
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;

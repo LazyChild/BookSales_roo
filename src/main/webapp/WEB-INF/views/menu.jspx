@@ -10,11 +10,12 @@
                 <menu:item id="fi_person_login" messageCode="global_menu_find" url="/people?find=ByLogin&amp;form" z="biKyNd8Wci1qbkSmrNsPMGODEG8="/>
             </menu:category>
         </sec:authorize>
-        <menu:category id="c_book" z="WxiVAJUlwzLkYi6u7YpEjYOT82A=">
+        <menu:category id="c_book" z="user-managed">
             <menu:item id="i_book_new" messageCode="global_menu_new" url="/books?form" z="gAIxvrBOHQC/N0HWTGD46jzwyk8="/>
             <menu:item id="i_book_list" messageCode="global_menu_list" url="/books?page=1&amp;size=${empty param.size ? 10 : param.size}" z="VM0+BikyiEq8a8S+W6bSp3FXQFo="/>
-            <menu:item id="fi_book_isbnequals" messageCode="global_menu_find" url="/books?find=ByIsbnEquals&amp;form" z="ddnkvbfiLI423y70hdkyEDbb+NQ="/>
-            <menu:item id="fi_book_titlelike" messageCode="global_menu_find" url="/books?find=ByTitleLike&amp;form" z="A9/aV8+FfBZCzjdBw9brxHaCSgs="/>
+            <menu:item id="fi_book_isbnequals" messageCode="global_menu_find" url="/books?find=ByIsbnEquals&amp;form" z="user-managed"/>
+            <menu:item id="fi_book_titlelike" messageCode="global_menu_find" url="/books?find=ByTitleLike&amp;form" z="user-managed"/>
+            <menu:item id="fi_book_titleorauthorlike" messageCode="global_menu_find" render="false" url="/books?find=ByTitleOrAuthorLike&amp;form" z="user-managed"/>
             <menu:item id="fi_book_authorlike" messageCode="global_menu_find" url="/books?find=ByAuthorLike&amp;form" z="azJB9pVngQGIh8gj+sUnOqJ82T4="/>
             <menu:item id="fi_book_publisherlike" messageCode="global_menu_find" url="/books?find=ByPublisherLike&amp;form" z="ALkztzMSfy6Fg5Rqjj7y9BSVSwc="/>
         </menu:category>
