@@ -16,4 +16,13 @@
 <definition extends="default" name="books/findBooksByTitleLike">
         <put-attribute name="body" value="/WEB-INF/views/books/findBooksByTitleLike.jspx"/>
     </definition>
+<definition extends="default" name="books/findBooksByIsbnEquals">
+        <put-attribute name="body" value="/WEB-INF/views/books/findBooksByIsbnEquals.jspx"/>
+    </definition>
+<definition extends="default" name="books/findBooksByAuthorLike">
+        <put-attribute name="body" value="/WEB-INF/views/books/findBooksByAuthorLike.jspx"/>
+    </definition>
+<definition extends="default" name="books/findBooksByPublisherLike">
+        <put-attribute name="body" value="/WEB-INF/views/books/findBooksByPublisherLike.jspx"/>
+    </definition>
 </tiles-definitions>

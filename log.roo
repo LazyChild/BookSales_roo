@@ -58,3 +58,13 @@ web mvc scaffold --class ~.web.BookTransactionController --backingType ~.domain.
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 21:20:16
 // Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-10 22:13:00
 field number --fieldName orz --type java.lang.Double --class ~.domain.Book --value 100
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-11 14:58:53
+finder list --class ~.domain.Book
+finder add --class ~.domain.Book --finderName findBookByIsbnEquals
+finder add --class ~.domain.Book --finderName findBookByAuthorLike
+finder add --class ~.domain.Book --finderName findBooksByIsbnEquals
+finder add --class ~.domain.Book --finderName findBooksByAuthorLike
+finder add --class ~.domain.Book --finderName findBooksByPublisherLike
+finder add --class ~.domain.BookTransaction --finderName findBookTransactionsByTransactionDateBetween
+web mvc finder add --formBackingType ~.domain.BookTransaction --class ~.web.BookTransactionController
+// Spring Roo 1.2.3.RELEASE [rev 7fd62b6] log opened at 2013-05-11 15:30:25

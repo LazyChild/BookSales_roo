@@ -9,4 +9,7 @@
     </definition>
 
 
+<definition extends="default" name="booktransactions/findBookTransactionsByTransactionDateBetween">
+        <put-attribute name="body" value="/WEB-INF/views/booktransactions/findBookTransactionsByTransactionDateBetween.jspx"/>
+    </definition>
 </tiles-definitions>

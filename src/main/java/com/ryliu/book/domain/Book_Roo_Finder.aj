@@ -9,6 +9,44 @@ import javax.persistence.TypedQuery;
 
 privileged aspect Book_Roo_Finder {
     
+    public static TypedQuery<Book> Book.findBooksByAuthorLike(String author) {
+        if (author == null || author.length() == 0) throw new IllegalArgumentException("The author argument is required");
+        author = author.replace('*', '%');
+        if (author.charAt(0) != '%') {
+            author = "%" + author;
+        }
+        if (author.charAt(author.length() - 1) != '%') {
+            author = author + "%";
+        }
+        EntityManager em = Book.entityManager();
+        TypedQuery<Book> q = em.createQuery("SELECT o FROM Book AS o WHERE LOWER(o.author) LIKE LOWER(:author)", Book.class);
+        q.setParameter("author", author);
+        return q;
+    }
+    
+    public static TypedQuery<Book> Book.findBooksByIsbnEquals(String isbn) {
+        if (isbn == null || isbn.length() == 0) throw new IllegalArgumentException("The isbn argument is required");
+        EntityManager em = Book.entityManager();
+        TypedQuery<Book> q = em.createQuery("SELECT o FROM Book AS o WHERE o.isbn = :isbn", Book.class);
+        q.setParameter("isbn", isbn);
+        return q;
+    }
+    
+    public static TypedQuery<Book> Book.findBooksByPublisherLike(String publisher) {
+        if (publisher == null || publisher.length() == 0) throw new IllegalArgumentException("The publisher argument is required");
+        publisher = publisher.replace('*', '%');
+        if (publisher.charAt(0) != '%') {
+            publisher = "%" + publisher;
+        }
+        if (publisher.charAt(publisher.length() - 1) != '%') {
+            publisher = publisher + "%";
+        }
+        EntityManager em = Book.entityManager();
+        TypedQuery<Book> q = em.createQuery("SELECT o FROM Book AS o WHERE LOWER(o.publisher) LIKE LOWER(:publisher)", Book.class);
+        q.setParameter("publisher", publisher);
+        return q;
+    }
+    
     public static TypedQuery<Book> Book.findBooksByTitleLike(String title) {
         if (title == null || title.length() == 0) throw new IllegalArgumentException("The title argument is required");
         title = title.replace('*', '%');

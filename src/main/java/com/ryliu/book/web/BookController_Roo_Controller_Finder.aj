@@ -12,6 +12,39 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 privileged aspect BookController_Roo_Controller_Finder {
     
+    @RequestMapping(params = { "find=ByAuthorLike", "form" }, method = RequestMethod.GET)
+    public String BookController.findBooksByAuthorLikeForm(Model uiModel) {
+        return "books/findBooksByAuthorLike";
+    }
+    
+    @RequestMapping(params = "find=ByAuthorLike", method = RequestMethod.GET)
+    public String BookController.findBooksByAuthorLike(@RequestParam("author") String author, Model uiModel) {
+        uiModel.addAttribute("books", Book.findBooksByAuthorLike(author).getResultList());
+        return "books/list";
+    }
+    
+    @RequestMapping(params = { "find=ByIsbnEquals", "form" }, method = RequestMethod.GET)
+    public String BookController.findBooksByIsbnEqualsForm(Model uiModel) {
+        return "books/findBooksByIsbnEquals";
+    }
+    
+    @RequestMapping(params = "find=ByIsbnEquals", method = RequestMethod.GET)
+    public String BookController.findBooksByIsbnEquals(@RequestParam("isbn") String isbn, Model uiModel) {
+        uiModel.addAttribute("books", Book.findBooksByIsbnEquals(isbn).getResultList());
+        return "books/list";
+    }
+    
+    @RequestMapping(params = { "find=ByPublisherLike", "form" }, method = RequestMethod.GET)
+    public String BookController.findBooksByPublisherLikeForm(Model uiModel) {
+        return "books/findBooksByPublisherLike";
+    }
+    
+    @RequestMapping(params = "find=ByPublisherLike", method = RequestMethod.GET)
+    public String BookController.findBooksByPublisherLike(@RequestParam("publisher") String publisher, Model uiModel) {
+        uiModel.addAttribute("books", Book.findBooksByPublisherLike(publisher).getResultList());
+        return "books/list";
+    }
+    
     @RequestMapping(params = { "find=ByTitleLike", "form" }, method = RequestMethod.GET)
     public String BookController.findBooksByTitleLikeForm(Model uiModel) {
         return "books/findBooksByTitleLike";

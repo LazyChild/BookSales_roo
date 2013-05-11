@@ -11,7 +11,7 @@ import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
 @RooToString
-@RooJpaActiveRecord(finders = { "findBooksByTitleLike" })
+@RooJpaActiveRecord(finders = { "findBooksByTitleLike", "findBooksByIsbnEquals", "findBooksByAuthorLike", "findBooksByPublisherLike" })
 public class Book {
 
     @NotNull
